@@ -10,3 +10,11 @@
   background: #f4f4f4;
   box-sizing: border-box;
 }
+
+.channel-editor {
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 90px;
+  border-top: 1px solid #f4f4f4;
+}

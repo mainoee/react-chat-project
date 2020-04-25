@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Channels from './channels';
 import MessagesList from './messagesList';
+import MessageForm from './messageForm';
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends Component {
       <div className="messaging-wrapper">
         <Channels channels={this.state.channels}/>
         <MessagesList />
+        <MessageForm />
       </div>
     );
   }
