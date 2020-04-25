@@ -1,3 +1,8 @@
+.messaging-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
 .channels-container {
   padding: 20px;
   width: 220px;
