@@ -10,7 +10,7 @@ const Channels = (props) => {
   };
 
   return (
-    <div>{renderChannels()}</div>
+    <div className="channels-container">{renderChannels()}</div>
   );
 };
 
