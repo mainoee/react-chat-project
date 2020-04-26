@@ -1,31 +1,24 @@
 import React, { Component } from 'react';
+import MessageForm from './messageForm';
+import Message from './message';
 
-const FAKE_DATA = [
-  {
-    username: 'mainoee',
-    text: 'Welcome to the chat!'
-  },
-  {
-    username: 'jcameron',
-    text: 'Hi there!'
-  },
-]
 
 class MessagesList extends Component {
   render() {
     return (
       <div>
-        {FAKE_DATA.map((message, index) => {
-          return (
-            <div key={index}>
-              {message.username}: {message.text}
-            </div>
-          )
-        })}
+        <div>
+          {this.props.messages.map((message, index) => {
+            return (
+              <Message key={index} message={message} />
+            )
+          })
+          }
+        </div>
+        <MessageForm />
       </div>
     )
   }
 }
-
 
 export default MessagesList;
