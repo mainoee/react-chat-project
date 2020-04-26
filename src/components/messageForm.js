@@ -8,7 +8,7 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <form className="channel-editor">
+      <form className="message-form">
         <input
           type="text"
           autoComplete="off"

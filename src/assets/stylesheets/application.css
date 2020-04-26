@@ -50,3 +50,31 @@
 .message-container > p {
   margin: 5px 0 10px;
 }
+
+.channel-editor {
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 90px;
+  border-top: 1px solid #f4f4f4;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 95%;
+  height: 100%;
+  border-radius: 2px;
+  border-color: #d4d4d4;
+}
+
+button {
+  padding: 10px 17px;
+  margin-top: 5px;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  border: none;
+  background-color: #D23333;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
