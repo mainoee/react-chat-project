@@ -18,3 +18,10 @@
   height: 90px;
   border-top: 1px solid #f4f4f4;
 }
+
+.channel-content {
+  padding: 20px 20px 0 28px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: scroll;
+}

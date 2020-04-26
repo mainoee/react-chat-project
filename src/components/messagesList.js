@@ -7,7 +7,7 @@ class MessagesList extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="channel-content">
           {this.props.messages.map((message, index) => {
             return (
               <Message key={index} message={message} />
