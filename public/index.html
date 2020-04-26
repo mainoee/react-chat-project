@@ -29,15 +29,25 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+      <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      <script>
+        // Firebase configuration
+        var firebaseConfig = {
+          apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+          authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+          databaseURL: process.env.REACT_APP_DATABASE_URL,
+          projectId: process.env.REACT_APP_PROJECT_ID,
+          storageBucket: process.env.REACT_APP_STORAKE_BUCKET,
+          messagingSenderId: process.env.REACT_APP_SENDER_ID,
+          appId: process.env.REACT_APP_ID,
+          measurementId: process.env.REACT_MEASUREMENT_ID
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      </script>
   </body>
 </html>
