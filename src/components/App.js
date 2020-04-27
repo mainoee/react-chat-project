@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Chat from './chat';
-import Login from './login';
-import Signup from './signup';
+import Chat from './chat/chat';
+import Login from './authentication/login';
+import Signup from './authentication/signup';
 
 class App extends Component {
   constructor(props) {
