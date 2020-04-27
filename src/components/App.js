@@ -28,11 +28,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <div className="auth-wrapper">
-            <div className="auth-inner">
-              <Route exact path="/login" component={Login} />
-            </div>
-          </div>
+          <Route exact path="/login" component={Login} />
           <Route
             exact path="/chat"
             render={(props) => <Chat {...props}
