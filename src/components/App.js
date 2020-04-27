@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import Chat from './chat';
+import Login from './login';
 
 class App extends Component {
   constructor(props) {
@@ -23,9 +26,17 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Chat channels={this.state.channels} messages={this.state.messages} />
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route
+            exact path="/chat"
+            render={(props) => <Chat {...props}
+                                     channels={this.state.channels}
+                                     messages={this.state.messages} />}
+          />
+        </Switch>
+      </Router>
     );
   }
 }
