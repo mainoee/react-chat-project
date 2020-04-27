@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MessageForm from './messageForm';
 import Message from './message';
 
-
 class MessagesList extends Component {
   render() {
     return (

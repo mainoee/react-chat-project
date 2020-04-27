@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Channels from './channels';
-import MessagesList from './messagesList';
+import Chat from './chat';
 
 class App extends Component {
   constructor(props) {
@@ -24,9 +23,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="messaging-wrapper">
-        <Channels channels={this.state.channels}/>
-        <MessagesList messages={this.state.messages}/>
+      <div>
+        <Chat channels={this.state.channels} messages={this.state.messages} />
       </div>
     );
   }
