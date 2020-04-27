@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './assets/stylesheets/application.css';
+import './assets/stylesheets/authentication.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import App from './components/app';
