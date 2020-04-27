@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Chat from './chat/chat';
 import Login from './authentication/login';
 import Signup from './authentication/signup';
+import PrivateRoute from './authentication/privateRoute';
 
 import { auth } from '../service/firebase';
 
@@ -33,8 +34,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
-          <Route
-            exact path="/chat"
+          <PrivateRoute path="/chat"
+            authenticated={this.state.authenticated}
             render={(props) => <Chat {...props}
                                      channels={this.state.channels}
                                      messages={this.state.messages} />}

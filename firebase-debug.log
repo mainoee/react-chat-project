@@ -27,3 +27,28 @@
 [debug] [2020-04-27T08:30:59.115Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 27 Apr 2020 08:30:59 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
 [info] i  hosting: Serving hosting files from: build
 [info] ✔  hosting: Local server: http://localhost:4000
+[debug] [2020-04-27T09:15:50.626Z] ----------------------------------------------------------------------
+[debug] [2020-04-27T09:15:50.629Z] Command:       /usr/local/bin/firebase /Users/marie-noellefromage/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase serve -p 4000
+[debug] [2020-04-27T09:15:50.629Z] CLI Version:   8.1.1
+[debug] [2020-04-27T09:15:50.629Z] Platform:      darwin
+[debug] [2020-04-27T09:15:50.629Z] Node Version:  v12.16.1
+[debug] [2020-04-27T09:15:50.631Z] Time:          Mon Apr 27 2020 11:15:50 GMT+0200 (Central European Summer Time)
+[debug] [2020-04-27T09:15:50.631Z] ----------------------------------------------------------------------
+[debug] [2020-04-27T09:15:50.631Z] 
+[debug] [2020-04-27T09:15:50.648Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-27T09:15:50.649Z] > authorizing via signed-in user
+[debug] [2020-04-27T09:15:50.650Z] [iam] checking project chat-project-85d5b for permissions ["firebase.projects.get"]
+[debug] [2020-04-27T09:15:50.653Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/chat-project-85d5b:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-04-27T09:15:51.642Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 27 Apr 2020 09:15:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=654","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-27T09:15:51.645Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/chat-project-85d5b  
+ 
+[debug] [2020-04-27T09:15:52.016Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 27 Apr 2020 09:15:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Serving from '/Users/marie-noellefromage/code/mainoee/chat-project'...
+[info] 
+[debug] [2020-04-27T09:15:52.019Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/chat-project-85d5b/webApps/-/config  
+ 
+[debug] [2020-04-27T09:15:52.764Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 27 Apr 2020 09:15:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:4000
