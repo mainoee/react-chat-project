@@ -5,6 +5,8 @@ import Chat from './chat/chat';
 import Login from './authentication/login';
 import Signup from './authentication/signup';
 
+import { auth } from '../service/firebase';
+
 class App extends Component {
   constructor(props) {
     super(props);
