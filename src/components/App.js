@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Chat from './chat';
 import Login from './login';
+import Signup from './signup';
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
           <Route
             exact path="/chat"
             render={(props) => <Chat {...props}
