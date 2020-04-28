@@ -52,3 +52,32 @@
 [debug] [2020-04-28T14:17:06.267Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 28 Apr 2020 14:17:06 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
 [info] i  hosting: Serving hosting files from: build
 [info] ✔  hosting: Local server: http://localhost:4000
+[debug] [2020-04-28T16:46:50.967Z] ----------------------------------------------------------------------
+[debug] [2020-04-28T16:46:50.969Z] Command:       /usr/local/bin/firebase /Users/marie-noellefromage/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase serve -p 4000
+[debug] [2020-04-28T16:46:50.969Z] CLI Version:   8.1.1
+[debug] [2020-04-28T16:46:50.969Z] Platform:      darwin
+[debug] [2020-04-28T16:46:50.970Z] Node Version:  v12.16.1
+[debug] [2020-04-28T16:46:50.971Z] Time:          Tue Apr 28 2020 18:46:50 GMT+0200 (Central European Summer Time)
+[debug] [2020-04-28T16:46:50.971Z] ----------------------------------------------------------------------
+[debug] [2020-04-28T16:46:50.971Z] 
+[debug] [2020-04-28T16:46:50.986Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-28T16:46:50.987Z] > authorizing via signed-in user
+[debug] [2020-04-28T16:46:50.987Z] [iam] checking project chat-project-85d5b for permissions ["firebase.projects.get"]
+[debug] [2020-04-28T16:46:50.991Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-28T16:46:50.991Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-28T16:46:51.250Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 28 Apr 2020 16:46:51 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-28T16:46:51.270Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/chat-project-85d5b:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-04-28T16:46:52.178Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 28 Apr 2020 16:46:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=695","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-28T16:46:52.179Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/chat-project-85d5b  
+ 
+[debug] [2020-04-28T16:46:52.545Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 28 Apr 2020 16:46:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Serving from '/Users/marie-noellefromage/code/mainoee/chat-project'...
+[info] 
+[debug] [2020-04-28T16:46:52.549Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/chat-project-85d5b/webApps/-/config  
+ 
+[debug] [2020-04-28T16:46:53.604Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 28 Apr 2020 16:46:53 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:4000
