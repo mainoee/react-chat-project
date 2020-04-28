@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+import Home from './home';
 import Chat from './chat/chat';
 import Login from './authentication/login';
 import Signup from './authentication/signup';
 import PrivateRoute from './authentication/privateRoute';
-
-import { auth } from '../service/firebase';
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +31,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
+          <Route exact path="/home" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <PrivateRoute path="/chat"
