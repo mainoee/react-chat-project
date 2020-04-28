@@ -1,11 +1,30 @@
 import React, { Component } from "react";
 
 class Signup extends Component {
-render() {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: '',
+      email: '',
+      password: '',
+      error: null,
+    }
+  }
+
+  onSubmit = event => {
+
+  }
+
+  onChange = event => {
+
+  };
+
+  render() {
     return (
       <div className="auth-wrapper">
         <div className="auth-inner">
-          <form>
+          <form onSubmit={this.onSubmit}>
             <h3>Sign Up</h3>
 
             <div className="form-group">
