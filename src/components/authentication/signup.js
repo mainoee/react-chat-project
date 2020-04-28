@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link, withRouter } from 'react-router-dom';
 
 import { withFirebase } from '../../service';
 
@@ -29,6 +30,7 @@ class SignUpFormBase extends Component {
       .doCreateUserWithEmailAndPassword(email, password)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
+        this.props.history.push(/home);
       })
       .catch(error => {
         this.setState({ error });
@@ -106,7 +108,7 @@ class SignUpFormBase extends Component {
   }
 }
 
-const SignUpForm = withFirebase(SignUpFormBase);
+const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 
 export default Signup;
 
