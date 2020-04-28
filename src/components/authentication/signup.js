@@ -17,10 +17,17 @@ class Signup extends Component {
   }
 
   onChange = event => {
-
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
+    const {
+      username,
+      email,
+      password,
+      error,
+    } = this.state;
+
     return (
       <div className="auth-wrapper">
         <div className="auth-inner">
@@ -28,21 +35,43 @@ class Signup extends Component {
             <h3>Sign Up</h3>
 
             <div className="form-group">
-              <label>Choose username</label>
-              <input type="username" className="form-control" placeholder="Enter username" />
+              <label>Your username</label>
+              <input
+                name="username"
+                value={username}
+                onChange={this.onChange}
+                type="text"
+                className="form-control"
+                placeholder="Enter username"
+              />
             </div>
 
             <div className="form-group">
               <label>Your email</label>
-              <input type="email" className="form-control" placeholder="Enter email" />
+              <input
+                name="email"
+                value={email}
+                onChange={this.onChange}
+                type="text"
+                className="form-control"
+                placeholder="Enter email"
+              />
             </div>
 
             <div className="form-group">
               <label>Password</label>
-              <input type="password" className="form-control" placeholder="Enter password" />
+              <input
+                name="password"
+                value={password}
+                onChange={this.onChange}
+                type="password"
+                className="form-control"
+                placeholder="Enter password" />
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block">Submit</button>
+            <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+
+            {error && <p>{error.message}</p>}
           </form>
         </div>
       </div>
