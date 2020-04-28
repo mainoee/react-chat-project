@@ -28,6 +28,11 @@ class Signup extends Component {
       error,
     } = this.state;
 
+    const isInvalid =
+      password === '' ||
+      email === '' ||
+      username === '';
+
     return (
       <div className="auth-wrapper">
         <div className="auth-inner">
@@ -69,7 +74,7 @@ class Signup extends Component {
                 placeholder="Enter password" />
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+            <button disabled={isInvalid} type="submit" className="btn btn-primary btn-block">Sign Up</button>
 
             {error && <p>{error.message}</p>}
           </form>
