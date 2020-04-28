@@ -18,6 +18,9 @@ class Firebase {
 
     this.auth = app.auth();
   }
+
+  doCreateUserWithEmailAndPassword = (email, password) =>
+    this.auth.createUserWithEmailAndPassword(email, password);
 }
 
 export default Firebase;
