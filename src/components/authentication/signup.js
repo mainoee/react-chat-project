@@ -1,18 +1,32 @@
 import React, { Component } from "react";
 
+const INITIAL_STATE = {
+  username: '',
+  email: '',
+  password: '',
+  error: null,
+};
+
 class Signup extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      username: '',
-      email: '',
-      password: '',
-      error: null,
-    }
+    this.state = { ...INITIAL_STATE };
   }
 
   onSubmit = event => {
+    const { username, email, password } = this.state;
+
+    this.props.firebase
+      .doCreateUserWithEmailAndPassword(email, password)
+      .then(authUser => {
+        this.setState({ ...INITIAL_STATE });
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
+
+    event.preventDefault();
 
   }
 
