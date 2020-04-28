@@ -1,5 +1,15 @@
 import React, { Component } from "react";
 
+import { FirebaseContext } from '../../service';
+
+const Signup = () => (
+  <div>
+    <FirebaseContext.Consumer>
+      {firebase => <SignUpForm firebase={firebase} />}
+    </FirebaseContext.Consumer>
+  </div>
+);
+
 const INITIAL_STATE = {
   username: '',
   email: '',
@@ -7,7 +17,7 @@ const INITIAL_STATE = {
   error: null,
 };
 
-class Signup extends Component {
+class SignUpForm extends Component {
   constructor(props) {
     super(props);
 
@@ -99,3 +109,5 @@ class Signup extends Component {
 }
 
 export default Signup;
+
+export { SignUpForm };
