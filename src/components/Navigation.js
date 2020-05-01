@@ -3,7 +3,28 @@ import { Link } from 'react-router-dom';
 
 import SignOutButton from './authentication/signout'
 
-const Navigation = () => (
+const Navigation = ({ authUser }) => (
+  <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
+);
+
+const NavigationAuth = () => (
+  <div>
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+      <div className="container">
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to={"/chat"}>Chat</Link>
+            </li>
+            <SignOutButton />
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+);
+
+const NavigationNonAuth = () => (
   <div>
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
       <div className="container">
@@ -18,10 +39,6 @@ const Navigation = () => (
             <li className="nav-item">
               <Link className="nav-link" to={"/"}>Home</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to={"/chat"}>Chat</Link>
-            </li>
-            <SignOutButton />
           </ul>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from './home';
 import Chat from './chat/chat';
@@ -7,6 +7,8 @@ import Login from './authentication/login';
 import Signup from './authentication/signup';
 import PrivateRoute from './authentication/privateRoute';
 import Navigation from './Navigation';
+
+import { withFirebase } from '../service';
 
 class App extends Component {
   constructor(props) {
@@ -29,11 +31,24 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    this.listener = this.props.firebase.auth.onAuthStateChanged(
+      authUser => {
+      authUser
+        ? this.setState({ authUser })
+        : this.setState({ authUser: null });
+    });
+  }
+
+  componentWillUnmount() {
+    this.listener();
+  }
+
   render() {
     return (
       <div>
         <Router>
-          <Navigation />
+          <Navigation authUser={this.state.authUser} />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
@@ -50,4 +65,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withFirebase(App);
+
