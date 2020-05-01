@@ -2,13 +2,13 @@ import React from 'react';
 import MessageForm from './messageForm';
 import Message from './message';
 
-const MessagesList = ({ messages }) => (
+const MessagesList = ({ messages, content }) => (
   <div className="channel-content">
     {messages.map(message => (
       <Message key={message.uid} message={message} />
     ))
     }
-    <MessageForm />
+    <MessageForm content={content} />
   </div>
 );
 
