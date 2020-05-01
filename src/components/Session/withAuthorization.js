@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
+import AuthUserContext from './context';
 import { withFirebase } from '../../service';
 
 const withAuthorization = condition => Component => {
@@ -20,9 +21,14 @@ const withAuthorization = condition => Component => {
       this.listener();
     }
 
+    // Avoid showing the protected page before the redirect happens
     render() {
       return (
-        <Component {...this.props} />
+        <AuthUserContext.Consumer>
+          {authUser =>
+            condition(authUser) ? <Component {...this.props} /> : null
+          }
+        </AuthUserContext.Consumer>
       );
     }
   }
