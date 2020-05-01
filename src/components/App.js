@@ -6,12 +6,13 @@ import Chat from './chat/chat';
 import Login from './authentication/login';
 import Signup from './authentication/signup';
 import PrivateRoute from './authentication/privateRoute';
-import SignOutButton from './authentication/signout';
+import Navigation from './Navigation';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      authUser: null,
       channels: ["Politics", "Economics", "World"],
       messages: [
         {
@@ -31,8 +32,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SignOutButton />
         <Router>
+          <Navigation />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
