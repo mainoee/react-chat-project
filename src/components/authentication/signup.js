@@ -31,7 +31,7 @@ class SignUpFormBase extends Component {
       .doCreateUserWithEmailAndPassword(email, password)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push('/home');
+        this.props.history.push('/');
       })
       .catch(error => {
         this.setState({ error });
