@@ -15,6 +15,7 @@ class ChatBase extends Component {
     this.state = {
       loading: false,
       messages: [],
+      content: '',
     };
   }
 
@@ -45,14 +46,14 @@ class ChatBase extends Component {
   }
 
   render() {
-    const { messages, loading } = this.state;
+    const { messages, loading, content } = this.state;
     return (
       <AuthUserContext.Consumer>
         {authUser => (
           <div className="messaging-wrapper">
             {loading && <div>Loading...</div>}
             {messages ? (
-              <MessagesList messages={messages} />
+              <MessagesList messages={messages} content={content} />
             ) : (
               <div>There are no messages ...</div>
             )}
