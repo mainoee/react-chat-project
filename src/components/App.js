@@ -5,7 +5,6 @@ import Home from './home';
 import Chat from './chat/chat';
 import Login from './authentication/login';
 import Signup from './authentication/signup';
-import PrivateRoute from './authentication/privateRoute';
 import Navigation from './Navigation';
 
 import { withAuthentication } from './Session';
@@ -39,7 +38,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <PrivateRoute path="/chat"
+            <Route exact path="/chat"
               render={(props) => <Chat {...props}
                                        channels={this.state.channels}
                                        messages={this.state.messages} />}
