@@ -22,7 +22,13 @@ class ChatBase extends Component {
     this.setState({ loading: true });
 
     this.props.firebase.messages().on('value', snapshot => {
-      this.setState({ loading: false });
+      const messageObject = snapshot.val();
+
+      if (messageObject) {
+        this.setState({ loading: false });
+      } else {
+        this.setState({ messages: null, loading: false });
+      }
     });
   }
 
@@ -36,8 +42,12 @@ class ChatBase extends Component {
       <AuthUserContext.Consumer>
         {authUser => (
           <div className="messaging-wrapper">
-            {loading && <div>Loading ...</div>}
-            <MessagesList messages={messages} />
+            {loading && <div>Loading...</div>}
+            {messages ? (
+              <MessagesList messages={messages} />
+            ) : (
+              <div>There are no messages ...</div>
+            )}
           </div>
         )}
       </AuthUserContext.Consumer>
