@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 import { compose } from 'recompose';
 
 import { withFirebase } from '../../service';
@@ -30,7 +30,7 @@ class LoginFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push('/');
+        this.props.history.push('/home');
       })
       .catch(error => {
         this.setState({ error });

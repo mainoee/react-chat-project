@@ -6,6 +6,7 @@ import Chat from './chat/chat';
 import Login from './authentication/login';
 import Signup from './authentication/signup';
 import PrivateRoute from './authentication/privateRoute';
+import SignOutButton from './authentication/signout';
 
 class App extends Component {
   constructor(props) {
@@ -29,19 +30,21 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <PrivateRoute path="/chat"
-            authenticated={this.state.authenticated}
-            render={(props) => <Chat {...props}
-                                     channels={this.state.channels}
-                                     messages={this.state.messages} />}
-          />
-        </Switch>
-      </Router>
+      <div>
+        <SignOutButton />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <PrivateRoute path="/chat"
+              render={(props) => <Chat {...props}
+                                       channels={this.state.channels}
+                                       messages={this.state.messages} />}
+            />
+          </Switch>
+        </Router>
+      </div>
     );
   }
 }
