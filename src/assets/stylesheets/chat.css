@@ -1,6 +1,6 @@
 .messaging-wrapper {
   display: flex;
-  height: 100vh;
+  margin-top: 60px;
 }
 
 .channels-container {
