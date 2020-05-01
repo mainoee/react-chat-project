@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import MessagesList from './messagesList';
 import Channels from './channels';
 
+import { withAuthorization } from '../Session';
+
 class Chat extends Component {
   render() {
     return (
@@ -13,4 +15,6 @@ class Chat extends Component {
   }
 }
 
-export default Chat;
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(Chat);
