@@ -25,7 +25,15 @@ class ChatBase extends Component {
       const messageObject = snapshot.val();
 
       if (messageObject) {
-        this.setState({ loading: false });
+        const messagesList = Object.keys(messageObject).map(key => ({
+          ...messageObject[key],
+          uid: key,
+        }));
+
+        this.setState({
+          messages: messagesList,
+          loading: false
+        });
       } else {
         this.setState({ messages: null, loading: false });
       }
