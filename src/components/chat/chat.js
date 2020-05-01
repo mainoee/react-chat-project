@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { compose } from 'recompose';
+
 import MessagesList from './messagesList';
 // import Channels from './channels';
 
@@ -6,7 +8,7 @@ import { withFirebase } from '../../service';
 
 import { AuthUserContext, withAuthorization } from '../Session';
 
-class Chat extends Component {
+class ChatBase extends Component {
   constructor(props) {
     super(props);
 
@@ -43,6 +45,10 @@ class Chat extends Component {
   }
 }
 
+const Chat = withFirebase(ChatBase);
+
 const condition = authUser => !!authUser;
 
-export default withAuthorization(condition)(Chat);
+export default compose(
+  withAuthorization(condition),
+)(Chat);
