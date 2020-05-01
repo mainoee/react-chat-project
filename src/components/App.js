@@ -9,6 +9,7 @@ import PrivateRoute from './authentication/privateRoute';
 import Navigation from './Navigation';
 
 import { withFirebase } from '../service';
+import { AuthUserContext } from './Session';
 
 class App extends Component {
   constructor(props) {
@@ -46,21 +47,23 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Router>
-          <Navigation authUser={this.state.authUser} />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <PrivateRoute path="/chat"
-              render={(props) => <Chat {...props}
-                                       channels={this.state.channels}
-                                       messages={this.state.messages} />}
-            />
-          </Switch>
-        </Router>
-      </div>
+      <AuthUserContext.Provider value={this.state.authUser}>
+        <div>
+          <Router>
+            <Navigation />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={Signup} />
+              <PrivateRoute path="/chat"
+                render={(props) => <Chat {...props}
+                                         channels={this.state.channels}
+                                         messages={this.state.messages} />}
+              />
+            </Switch>
+          </Router>
+        </div>
+      </AuthUserContext.Provider>
     );
   }
 }
