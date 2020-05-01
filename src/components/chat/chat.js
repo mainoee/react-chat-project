@@ -45,6 +45,20 @@ class ChatBase extends Component {
     this.props.firebase.messages().off();
   }
 
+  onChangeContent = event => {
+    this.setState({ content: event.target.value });
+  };
+
+  onCreateMessage = event => {
+    this.props.firebase.messages().push({
+      content: this.state.content,
+    });
+
+    this.setState({ content: '' });
+
+    event.preventDefault();
+  };
+
   render() {
     const { messages, loading, content } = this.state;
     return (
@@ -53,7 +67,12 @@ class ChatBase extends Component {
           <div className="messaging-wrapper">
             {loading && <div>Loading...</div>}
             {messages ? (
-              <MessagesList messages={messages} content={content} />
+              <MessagesList
+                messages={this.state.messages}
+                content={this.state.content}
+                onChangeContent={this.onChangeContent}
+                onCreateMessage={this.onCreateMessage}
+              />
             ) : (
               <div>There are no messages ...</div>
             )}

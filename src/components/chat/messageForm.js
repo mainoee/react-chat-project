@@ -1,24 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class MessageForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '' };
-  }
-
-  render() {
-    return (
-      <form className="message-form">
-        <input
-          type="text"
-          autoComplete="off"
-          value={this.state.value}
-        />
-        <button type="submit">Send</button>
-      </form>
-    )
-  }
-}
+const MessageForm = ({ content, onCreateMessage, onChangeContent }) => (
+  <form onSubmit={onCreateMessage} className="message-form">
+    <input
+      type="text"
+      value={content}
+      onChange={onChangeContent}
+    />
+    <button type="submit">Send</button>
+  </form>
+)
 
 
 export default MessageForm;
