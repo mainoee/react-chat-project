@@ -7,7 +7,7 @@ import { AuthUserContext, withAuthorization } from '../Session';
 
 import MessagesList from './messagesList';
 import MessageForm from './messageForm';
-// import Channels from './channels';
+import Channels from './channels';
 
 class Chat extends Component {
   constructor(props) {
@@ -17,6 +17,7 @@ class Chat extends Component {
       loading: false,
       messages: [],
       content: '',
+      channels: ["Politics", "Economics", "World"],
     };
   }
 
@@ -66,12 +67,13 @@ class Chat extends Component {
   };
 
   render() {
-    const { messages, loading, content } = this.state;
+    const { messages, loading, content, channels } = this.state;
     return (
       <AuthUserContext.Consumer>
         {authUser => (
           <div className="messaging-wrapper">
             {loading && <div>Loading...</div>}
+            <Channels channels={channels} />
             {messages ? (
               <MessagesList messages={messages} />
             ) : (
