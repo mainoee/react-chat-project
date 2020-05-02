@@ -2,7 +2,7 @@ import React from 'react';
 import Message from './message';
 
 const MessagesList = ({ messages }) => (
-  <div className="channel-content">
+  <div className="messages-content">
     {messages.map(message => (
       <Message
         key={message.uid}

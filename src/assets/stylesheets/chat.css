@@ -4,22 +4,15 @@
 }
 
 .channels-container {
-  padding: 20px;
-  width: 220px;
+  margin-left: 5px;
+  padding: 30px;
+  width: 15vw;
   height: 100vh;
   background: #f4f4f4;
   box-sizing: border-box;
 }
 
-.channel-editor {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  height: 90px;
-  border-top: 1px solid #f4f4f4;
-}
-
-.channel-content {
+.message-container {
   padding: 20px 20px 0 28px;
   box-sizing: border-box;
   height: 100%;
@@ -51,7 +44,10 @@
   margin: 5px 0 10px;
 }
 
-.channel-editor {
+.messages-content {
+}
+
+.message-form {
   display: flex;
   padding: 20px;
   box-sizing: border-box;

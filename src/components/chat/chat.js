@@ -74,17 +74,19 @@ class Chat extends Component {
           <div className="messaging-wrapper">
             {loading && <div>Loading...</div>}
             <Channels channels={channels} />
-            {messages ? (
-              <MessagesList messages={messages} />
-            ) : (
-              <div>There are no messages ...</div>
-            )}
-            <MessageForm
-              authUser={authUser}
-              content={content}
-              onChangeContent={this.onChangeContent}
-              onCreateMessage={this.onCreateMessage}
-            />
+            <div className="message-container">
+              {messages ? (
+                <MessagesList messages={messages} />
+              ) : (
+                <div>There are no messages...</div>
+              )}
+              <MessageForm
+                authUser={authUser}
+                content={content}
+                onChangeContent={this.onChangeContent}
+                onCreateMessage={this.onCreateMessage}
+              />
+            </div>
           </div>
         )}
       </AuthUserContext.Consumer>
