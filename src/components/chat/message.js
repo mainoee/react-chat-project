@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Message = ({ message }) => (
-  <div className="message-container">
-    <i>
-      <span>{message.userId}</span>
-      <p>{message.content}</p>
-    </i>
-  </div>
-);
+class Message extends Component {
+  render() {
+    const { message } = this.props;
+    const date = new Date(message.createdAt).toLocaleTimeString();
+    return (
+      <div>
+        <span>{message.userId}</span><p>{date}</p>
+        <p>{message.content}</p>
+      </div>
+    )
+  }
+}
 
 export default Message;

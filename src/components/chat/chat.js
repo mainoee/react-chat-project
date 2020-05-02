@@ -59,6 +59,7 @@ class Chat extends Component {
     this.props.firebase.messages().push({
         content: this.state.content,
         userId: authUser.uid,
+        createdAt: this.props.firebase.serverValue.TIMESTAMP,
       });
 
     this.setState({ content: '' });
