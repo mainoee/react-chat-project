@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import MessagesList from './messagesList';
-// import Channels from './channels';
-
 import { withFirebase } from '../../service';
 
 import { AuthUserContext, withAuthorization } from '../Session';
 
-class ChatBase extends Component {
+import MessagesList from './messagesList';
+import MessageForm from './messageForm';
+// import Channels from './channels';
+
+class Chat extends Component {
   constructor(props) {
     super(props);
 
@@ -19,7 +20,11 @@ class ChatBase extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
+    this.onListenForMessages();
+  }
+
+  onListenForMessages = () => {
     this.setState({ loading: true });
 
     this.props.firebase.messages().on('value', snapshot => {
@@ -41,7 +46,7 @@ class ChatBase extends Component {
     });
   }
 
-  componentWillUnmount() {
+  componentWillUnmount = () => {
     this.props.firebase.messages().off();
   }
 
@@ -49,14 +54,17 @@ class ChatBase extends Component {
     this.setState({ content: event.target.value });
   };
 
-  onCreateMessage = event => {
+onCreateMessage = (event, authUser) => {
+  try {
     this.props.firebase.messages().push({
       content: this.state.content,
+      userId: authUser.uid,
     });
-
     this.setState({ content: '' });
-
     event.preventDefault();
+    } catch(error) {
+   console.log(error)
+  }
   };
 
   render() {
@@ -67,14 +75,17 @@ class ChatBase extends Component {
           <div className="messaging-wrapper">
             {loading && <div>Loading...</div>}
             {messages ? (
-              <MessagesList
-                messages={this.state.messages}
-                content={this.state.content}
-                onChangeContent={this.onChangeContent}
-                onCreateMessage={this.onCreateMessage}
-              />
+              <MessagesList messages={messages} />
             ) : (
-              <div>There are no messages ...</div>
+              <div>
+                <MessageForm
+                  authUser={authUser}
+                  content={content}
+                  onChangeContent={this.onChangeContent}
+                  onCreateMessage={this.onCreateMessage}
+                />
+                <div>There are no messages ...</div>
+              </div>
             )}
           </div>
         )}
@@ -83,10 +94,9 @@ class ChatBase extends Component {
   }
 }
 
-const Chat = withFirebase(ChatBase);
-
 const condition = authUser => !!authUser;
 
 export default compose(
+  withFirebase,
   withAuthorization(condition),
 )(Chat);

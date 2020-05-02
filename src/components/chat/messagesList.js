@@ -2,7 +2,13 @@ import React from 'react';
 import MessageForm from './messageForm';
 import Message from './message';
 
-const MessagesList = ({ messages, content, onChangeContent, onCreateMessage }) => (
+const MessagesList = ({
+  authUser,
+  messages,
+  content,
+  onCreateMessage,
+  onChangeContent
+}) => (
   <div className="channel-content">
     {messages.map(message => (
       <Message
@@ -12,9 +18,10 @@ const MessagesList = ({ messages, content, onChangeContent, onCreateMessage }) =
     ))
     }
     <MessageForm
+      authUser={authUser}
       content={content}
-      onChangeContent={onChangeContent}
       onCreateMessage={onCreateMessage}
+      onChangeContent={onChangeContent}
     />
   </div>
 );

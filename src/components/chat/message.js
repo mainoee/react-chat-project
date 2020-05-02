@@ -4,7 +4,7 @@ const Message = ({ message }) => (
   <div className="message-container">
     <i>
       <span>{message.userId}</span>
-      <p>{message.text}</p>
+      <p>{message.content}</p>
     </i>
   </div>
 );
