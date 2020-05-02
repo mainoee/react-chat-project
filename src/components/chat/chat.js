@@ -75,16 +75,14 @@ class Chat extends Component {
             {messages ? (
               <MessagesList messages={messages} />
             ) : (
-              <div>
-                <MessageForm
-                  authUser={authUser}
-                  content={content}
-                  onChangeContent={this.onChangeContent}
-                  onCreateMessage={this.onCreateMessage}
-                />
-                <div>There are no messages ...</div>
-              </div>
+              <div>There are no messages ...</div>
             )}
+            <MessageForm
+              authUser={authUser}
+              content={content}
+              onChangeContent={this.onChangeContent}
+              onCreateMessage={this.onCreateMessage}
+            />
           </div>
         )}
       </AuthUserContext.Consumer>
