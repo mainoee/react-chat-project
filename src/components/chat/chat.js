@@ -54,17 +54,15 @@ class Chat extends Component {
     this.setState({ content: event.target.value });
   };
 
-onCreateMessage = (event, authUser) => {
-  try {
+  onCreateMessage = (event, authUser) => {
     this.props.firebase.messages().push({
-      content: this.state.content,
-      userId: authUser.uid,
-    });
+        content: this.state.content,
+        userId: authUser.uid,
+      });
+
     this.setState({ content: '' });
+
     event.preventDefault();
-    } catch(error) {
-   console.log(error)
-  }
   };
 
   render() {
