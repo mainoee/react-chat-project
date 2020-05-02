@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './assets/stylesheets/index.css';
+import './assets/stylesheets/navbar.css';
 import './assets/stylesheets/chat.css';
 import './assets/stylesheets/authentication.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';

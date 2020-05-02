@@ -11,13 +11,15 @@ import { withAuthentication } from './Session';
 
 const App = () => (
   <Router>
-    <Navigation />
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/signup" component={Signup} />
-      <Route exact path="/chat" component={Chat} />
-    </Switch>
+    <div className="App">
+      <Navigation />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/chat" component={Chat} />
+      </Switch>
+    </div>
   </Router>
 );
 
