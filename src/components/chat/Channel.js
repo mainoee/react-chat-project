@@ -6,8 +6,12 @@ class Channel extends Component {
   }
 
   render() {
+    const { channel } = this.props;
     return (
-      <p className="" href="#" onClick={this.handleClick}>{this.props.channel}</p>
+      <p className={channel === this.props.selectedChannel ? 'active' : null }
+         onClick={this.handleClick}>
+          {channel}
+      </p>
     )
   }
 }

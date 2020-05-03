@@ -12,6 +12,11 @@
   box-sizing: border-box;
 }
 
+.channels-container > p.active {
+  font-weight: 600;
+  color: black
+}
+
 .message-container {
   padding: 20px 20px 0 28px;
   height: 100%;

@@ -18,7 +18,7 @@ class Chat extends Component {
       messages: [],
       content: '',
       channels: ["Politics", "Economics", "World"],
-      selectedChannel: '',
+      selectedChannel: 'Politics',
     };
   }
 
@@ -29,7 +29,8 @@ class Chat extends Component {
   onListenForMessages = () => {
     this.setState({ loading: true });
 
-    this.props.firebase.messages().on('value', snapshot => {
+    const channel = this.state.selectedChannel;
+    this.props.firebase.channels(channel).on('value', snapshot => {
       const messageObject = snapshot.val();
 
       if (messageObject) {
@@ -57,7 +58,8 @@ class Chat extends Component {
   };
 
   onCreateMessage = (event, authUser) => {
-    this.props.firebase.messages().push({
+    const channel = this.state.selectedChannel;
+    this.props.firebase.channels(channel).push({
         content: this.state.content,
         userId: authUser.uid,
         createdAt: this.props.firebase.serverValue.TIMESTAMP,
@@ -70,11 +72,10 @@ class Chat extends Component {
 
   onClickChannel = (selectedChannel) => {
     this.setState({ selectedChannel: selectedChannel })
-    console.log(selectedChannel)
   }
 
   render() {
-    const { messages, loading, content, channels } = this.state;
+    const { messages, loading, content, channels, selectedChannel } = this.state;
     return (
       <AuthUserContext.Consumer>
         {authUser => (
@@ -82,7 +83,9 @@ class Chat extends Component {
             {loading && <div>Loading...</div>}
             <Channels
               channels={channels}
-              onClickChannel={this.onClickChannel} />
+              selectedChannel={selectedChannel}
+              onClickChannel={this.onClickChannel}
+            />
             <div className="message-container">
               {messages ? (
                 <MessagesList messages={messages} />

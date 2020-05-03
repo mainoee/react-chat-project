@@ -46,7 +46,7 @@ class Firebase {
 
   users = () => this.db.ref('users');
 
-  messages = () => this.db.ref('messages');
+  channels = (name) => this.db.ref(`channels/${name}/messages`);
 }
 
 export default Firebase;
