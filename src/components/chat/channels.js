@@ -1,18 +1,17 @@
 import React from 'react';
+import Channel from './Channel';
 
-const Channels = (props) => {
-  const renderChannels = () => {
-    return props.channels.map((channel, index) => {
-      return (
-        <p key={index}>{channel}</p>
-      );
-    });
-  };
-
-  return (
-    <div className="channels-container">{renderChannels()}</div>
-  );
-};
-
+const Channels = ({ channels, onClickChannel }) => (
+  <div className="channels-container">
+    {channels.map((channel, index) => (
+      <Channel
+        key={index}
+        channel={channel}
+        onClickChannel={onClickChannel}
+      />
+    ))
+    }
+  </div>
+);
 
 export default Channels;

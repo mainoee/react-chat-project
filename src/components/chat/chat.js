@@ -18,6 +18,7 @@ class Chat extends Component {
       messages: [],
       content: '',
       channels: ["Politics", "Economics", "World"],
+      selectedChannel: '',
     };
   }
 
@@ -67,6 +68,11 @@ class Chat extends Component {
     event.preventDefault();
   };
 
+  onClickChannel = (selectedChannel) => {
+    this.setState({ selectedChannel: selectedChannel })
+    console.log(selectedChannel)
+  }
+
   render() {
     const { messages, loading, content, channels } = this.state;
     return (
@@ -74,7 +80,9 @@ class Chat extends Component {
         {authUser => (
           <div className="messaging-wrapper">
             {loading && <div>Loading...</div>}
-            <Channels channels={channels} />
+            <Channels
+              channels={channels}
+              onClickChannel={this.onClickChannel} />
             <div className="message-container">
               {messages ? (
                 <MessagesList messages={messages} />
