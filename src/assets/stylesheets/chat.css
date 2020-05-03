@@ -7,14 +7,13 @@
   margin-left: 5px;
   padding: 30px;
   width: 15vw;
-  height: 100vh;
+  height: 88vh;
   background: #f4f4f4;
   box-sizing: border-box;
 }
 
 .message-container {
   padding: 20px 20px 0 28px;
-  box-sizing: border-box;
   height: 100%;
   overflow: scroll;
 }
@@ -45,13 +44,15 @@
 }
 
 .messages-content {
+  height: 75vh;
 }
 
 .message-form {
   display: flex;
-  padding: 20px;
+  padding-top: 10px;
   box-sizing: border-box;
-  height: 90px;
+  height: 10vh;
+  width: 80vw;
   border-top: 1px solid #f4f4f4;
 }
 
