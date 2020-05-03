@@ -7,7 +7,7 @@ import './assets/stylesheets/chat.css';
 import './assets/stylesheets/authentication.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-import App from './components/app';
+import App from './components/App';
 import Firebase, { FirebaseContext } from './service';
 
 ReactDOM.render(

@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from './home';
-import Chat from './chat/chat';
-import Login from './authentication/login';
-import Signup from './authentication/signup';
+import Home from './Home';
+import Chat from './chat/Chat';
+import Login from './authentication/Login';
+import Signup from './authentication/Signup';
 import Navigation from './Navigation';
 
-import { withAuthentication } from './Session';
+import { withAuthentication } from './session';
 
 const App = () => (
   <Router>

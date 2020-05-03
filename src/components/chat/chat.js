@@ -3,11 +3,11 @@ import { compose } from 'recompose';
 
 import { withFirebase } from '../../service';
 
-import { AuthUserContext, withAuthorization } from '../Session';
+import { AuthUserContext, withAuthorization } from '../session';
 
-import MessagesList from './messagesList';
-import MessageForm from './messageForm';
-import Channels from './channels';
+import MessagesList from './MessagesList';
+import MessageForm from './MessageForm';
+import Channels from './Channels';
 
 class Chat extends Component {
   constructor(props) {
@@ -32,6 +32,7 @@ class Chat extends Component {
     const channel = this.state.selectedChannel;
     this.props.firebase.channels(channel).on('value', snapshot => {
       const messageObject = snapshot.val();
+      console.log(messageObject)
 
       if (messageObject) {
         const messagesList = Object.keys(messageObject).map(key => ({
