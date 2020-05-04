@@ -29,11 +29,16 @@ class Message extends Component {
     const { message } = this.props;
     const time = new Date(message.createdAt).toLocaleTimeString();
     const date = new Date(message.createdAt).toLocaleDateString();
+
     return (
       <div className="message-content">
         <i>{this.state.username}</i><small>{date} - {time}</small>
         <p>{message.content}</p>
-        <img src={message.gif} alt="gif" height="80" width="80" />
+        {message.gif ? (
+          <img src={message.gif} alt="gif" height="80" width="80" />
+        ) : (
+          ""
+        )}
       </div>
     )
   }

@@ -107,9 +107,12 @@ class Chat extends Component {
               selectedChannel={selectedChannel}
               onClickChannel={this.onClickChannel}
             />
-            <div className="message-container">
-                {loading && <div>Loading...</div>}
-                <div className="thread">
+            <div
+              className="message-container"
+              ref={(list) => { this.list = list; }}
+            >
+              {loading && <div>Loading...</div>}
+              <div className="thread">
                 {messages ? (
                   <MessagesList messages={messages} />
                 ) : (
