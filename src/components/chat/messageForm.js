@@ -10,7 +10,7 @@ class MessageForm extends Component {
           value={content}
           onChange={onChangeContent}
         />
-        <button type="submit">Send</button>
+        <button type="submit" disabled={!content}>Send</button>
       </form>
     )
   }
