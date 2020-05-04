@@ -10,7 +10,7 @@ class Channel extends Component {
     return (
       <p className={channel === selectedChannel ? 'active' : null }
          onClick={this.handleClick}>
-          {channel}
+          #{channel}
       </p>
     )
   }
