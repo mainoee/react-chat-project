@@ -33,7 +33,10 @@ class Chat extends Component {
 
     const channel = this.state.selectedChannel;
 
-    this.props.firebase.channels(channel).on('value', snapshot => {
+    this.props.firebase
+      .channels(channel)
+      .orderByChild('createdAt')
+      .on('value', snapshot => {
       const messageObject = snapshot.val();
 
       if (messageObject) {
