@@ -102,13 +102,13 @@ class Chat extends Component {
       <AuthUserContext.Consumer>
         {authUser => (
           <div className="messaging-wrapper">
-            {loading && <div>Loading...</div>}
             <Channels
               channels={channels}
               selectedChannel={selectedChannel}
               onClickChannel={this.onClickChannel}
             />
             <div className="message-container">
+              {loading && <div>Loading...</div>}
               {messages ? (
                 <MessagesList messages={messages} />
               ) : (
