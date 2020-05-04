@@ -11,7 +11,7 @@ import { withAuthentication } from './session';
 
 const App = () => (
   <Router>
-    <div className="App">
+    <div className="app">
       <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
