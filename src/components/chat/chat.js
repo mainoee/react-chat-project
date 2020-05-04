@@ -113,7 +113,7 @@ class Chat extends Component {
                 {messages ? (
                   <MessagesList messages={messages} />
                 ) : (
-                  <div>There are no messages...</div>
+                  <div>There are no messages yet!</div>
                 )}
                 <ReactGiphySearchbox
                   apiKey={process.env.REACT_APP_GIPHY_SEARCHBOX}
