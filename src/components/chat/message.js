@@ -30,8 +30,8 @@ class Message extends Component {
     const time = new Date(message.createdAt).toLocaleTimeString();
     const date = new Date(message.createdAt).toLocaleDateString();
     return (
-      <div>
-        <span>{this.state.username}</span> <i>{date} - {time}</i>
+      <div className="message-content">
+        <i>{this.state.username}</i><small>{date} - {time}</small>
         <p>{message.content}</p>
         <img src={message.gif} alt="gif" height="80" width="80" />
       </div>

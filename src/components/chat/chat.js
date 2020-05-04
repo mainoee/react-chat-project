@@ -108,20 +108,22 @@ class Chat extends Component {
               onClickChannel={this.onClickChannel}
             />
             <div className="message-container">
-              {loading && <div>Loading...</div>}
-              {messages ? (
-                <MessagesList messages={messages} />
-              ) : (
-                <div>There are no messages...</div>
-              )}
-              <ReactGiphySearchbox
-                apiKey={process.env.REACT_APP_GIPHY_SEARCHBOX}
-                onSelect={item => this.onSelectGif(item)}
-                masonryConfig={[
-                  { columns: 2, imageWidth: 110, gutter: 5 },
-                  { mq: "700px", columns: 3, imageWidth: 120, gutter: 5 }
-                ]}
-              />
+                {loading && <div>Loading...</div>}
+                <div className="thread">
+                {messages ? (
+                  <MessagesList messages={messages} />
+                ) : (
+                  <div>There are no messages...</div>
+                )}
+                <ReactGiphySearchbox
+                  apiKey={process.env.REACT_APP_GIPHY_SEARCHBOX}
+                  onSelect={item => this.onSelectGif(item)}
+                  masonryConfig={[
+                    { columns: 2, imageWidth: 110, gutter: 5 },
+                    { mq: "700px", columns: 3, imageWidth: 120, gutter: 5 }
+                  ]}
+                />
+              </div>
               <MessageForm
                 authUser={authUser}
                 content={content}
