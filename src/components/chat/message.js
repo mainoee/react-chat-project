@@ -32,6 +32,7 @@ class Message extends Component {
       <div>
         <span>{this.state.username}</span> <i>{date}</i>
         <p>{message.content}</p>
+        <img src={message.gif} alt="gif" height="80" width="80" />
       </div>
     )
   }

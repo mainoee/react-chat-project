@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import ReactGiphySearchbox from "react-giphy-searchbox";
 
 import { withFirebase } from '../../service';
 
@@ -19,6 +20,7 @@ class Chat extends Component {
       content: '',
       channels: ["Politics", "Economics", "World"],
       selectedChannel: 'Politics',
+      selectedGif: '',
     };
   }
 
@@ -71,9 +73,10 @@ class Chat extends Component {
         content: this.state.content,
         userId: authUser.uid,
         createdAt: this.props.firebase.serverValue.TIMESTAMP,
+        gif: this.state.selectedGif
       });
 
-    this.setState({ content: '' });
+    this.setState({ content: '', selectedGif: '' });
 
     event.preventDefault();
   };
@@ -82,8 +85,19 @@ class Chat extends Component {
     this.setState({ selectedChannel: selectedChannel });
   }
 
+  onSelectGif = (gifObject) => {
+    const gif = gifObject.images.downsized.url
+    console.log(gif)
+    this.setState({ selectedGif: gif })
+  }
+
   render() {
-    const { messages, loading, content, channels, selectedChannel } = this.state;
+    const {
+      messages,
+      loading,
+      content,
+      channels,
+      selectedChannel } = this.state;
     return (
       <AuthUserContext.Consumer>
         {authUser => (
@@ -100,6 +114,14 @@ class Chat extends Component {
               ) : (
                 <div>There are no messages...</div>
               )}
+              <ReactGiphySearchbox
+                apiKey={process.env.REACT_APP_GIPHY_SEARCHBOX}
+                onSelect={item => this.onSelectGif(item)}
+                masonryConfig={[
+                  { columns: 2, imageWidth: 110, gutter: 5 },
+                  { mq: "700px", columns: 3, imageWidth: 120, gutter: 5 }
+                ]}
+              />
               <MessageForm
                 authUser={authUser}
                 content={content}
