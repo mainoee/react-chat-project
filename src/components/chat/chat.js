@@ -30,9 +30,9 @@ class Chat extends Component {
     this.setState({ loading: true });
 
     const channel = this.state.selectedChannel;
+
     this.props.firebase.channels(channel).on('value', snapshot => {
       const messageObject = snapshot.val();
-      console.log(messageObject)
 
       if (messageObject) {
         const messagesList = Object.keys(messageObject).map(key => ({
@@ -50,8 +50,15 @@ class Chat extends Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.selectedChannel !== this.state.selectedChannel) {
+      this.onListenForMessages();
+    }
+  }
+
   componentWillUnmount = () => {
-    this.props.firebase.messages().off();
+    const channel = this.state.selectedChannel;
+    this.props.firebase.channels(channel).off();
   }
 
   onChangeContent = event => {
@@ -72,7 +79,7 @@ class Chat extends Component {
   };
 
   onClickChannel = (selectedChannel) => {
-    this.setState({ selectedChannel: selectedChannel })
+    this.setState({ selectedChannel: selectedChannel });
   }
 
   render() {
