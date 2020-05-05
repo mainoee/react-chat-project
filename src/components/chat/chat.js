@@ -104,7 +104,7 @@ class Chat extends Component {
     return (
       <AuthUserContext.Consumer>
         {authUser => (
-          <div className="messaging-wrapper">
+          <div className="app-wrapper">
             <Channels
               channels={channels}
               selectedChannel={selectedChannel}
