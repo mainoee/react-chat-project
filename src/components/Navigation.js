@@ -1,57 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 import SignOutButton from './authentication/Signout'
 
 import { AuthUserContext } from './session';
 
 const Navigation = () => (
-  <div>
+  <nav className="navbar-light">
     <AuthUserContext.Consumer>
       {authUser =>
         authUser ? <NavigationAuth /> : <NavigationNonAuth />
       }
     </AuthUserContext.Consumer>
-  </div>
+  </nav>
 );
 
 const NavigationAuth = () => (
-  <div>
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-      <div className="container">
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to={"/chat"}>Chat</Link>
-            </li>
-            <SignOutButton />
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
+  <ul className="menu">
+    <Link className="nav-link" to={"/chat"}>Chat</Link>
+    <SignOutButton />
+  </ul>
 );
 
 const NavigationNonAuth = () => (
-  <div>
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-      <div className="container">
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to={"/signup"}>Sign Up</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to={"/login"}>Login</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to={"/"}>Home</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
+  <ul className="menu">
+    <Link className="nav-link" to={"/"}>Home</Link>
+    <Button
+      color="primary"
+      variant="outlined"
+      className="button-authentication">
+        <Link to={"/signup"}>Sign Up</Link>
+    </Button>
+    <Button
+      color="primary"
+      variant="outlined"
+      className="button-authentication">
+        <Link to={"/login"}>Login</Link>
+    </Button>
+  </ul>
 );
 
 export default Navigation;
