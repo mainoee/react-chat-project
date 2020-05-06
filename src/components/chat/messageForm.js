@@ -11,6 +11,7 @@ const sendButton = makeStyles((theme) => ({
 
 const MessageForm = (props) => {
   const classes = sendButton();
+  const gif = props.selectedGif
   return(
     <form onSubmit={(event) => props.onCreateMessage(event, props.authUser)} className="message-form">
       <input
@@ -18,12 +19,20 @@ const MessageForm = (props) => {
         value={props.content}
         onChange={props.onChangeContent}
       />
+      <div className="selected-gif">
+        {gif ? (
+          <img src={gif} alt="gif" className="gif" />
+        ) : (
+          ""
+        )}
+      </div>
       <Button
+          type="submit"
           variant="contained"
           color="primary"
           className={classes.root}
-          labelStyle={{ fontSize: '10px' }}
-          disabled={!props.content}
+          labelstyle={{ fontSize: '10px' }}
+          disabled={!gif && !props.content}
         >Send
       </Button>
     </form>

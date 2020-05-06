@@ -90,7 +90,6 @@ class Chat extends Component {
 
   onSelectGif = (gifObject) => {
     const gif = gifObject.images.downsized.url
-    console.log(gif)
     this.setState({ selectedGif: gif })
   }
 
@@ -100,7 +99,8 @@ class Chat extends Component {
       loading,
       content,
       channels,
-      selectedChannel } = this.state;
+      selectedChannel,
+      selectedGif } = this.state;
     return (
       <AuthUserContext.Consumer>
         {authUser => (
@@ -121,6 +121,7 @@ class Chat extends Component {
                 <MessageForm
                   authUser={authUser}
                   content={content}
+                  selectedGif={selectedGif}
                   onChangeContent={this.onChangeContent}
                   onCreateMessage={this.onCreateMessage}
                 />
