@@ -1,35 +1,52 @@
 .channels-container {
   padding: 30px;
-  width: 15vw;
+  width: 13vw;
   height: 100vh;
-  background: #f4f4f4;
+  background: #4a3848;
   box-sizing: border-box;
-  border: 1px solid black;
+  border-left: 2px solid white;
 }
 
 .channels-container > p.active {
   font-weight: 600;
-  color: black;
+  color: white;
+}
+
+.channels-container > p {
+  color: white;
+  color: #bababa;
+  padding-left: 5px;
+  cursor: pointer;
 }
 
 .message-container {
-  padding: 20px 20px 0 28px;
+  display: flex;
+  justify-content: space-between;
   height: 100vh;
+  width: 100vw;
 }
 
 .thread {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  width: 80%;
+  padding: 10px;
 }
 
 .message-list {
-  height: 80vh;
-  width: 90vh;
+  height: 85vh;
+  width: 100%;
   overflow: scroll;
 }
 
-.message-content > p {
-  width: max-content;
+.message-content {
+  width: 120vh;
+}
+
+.message-content > p.thread-content {
+  width: fit-content;
+  word-wrap: break-word;
   color: white;
   padding: 5px 15px;
   line-height: 26px;
@@ -53,17 +70,29 @@
   opacity: 0.6;
 }
 
+/*.es_componentWrapper__1-bJI {
+
+}
+
+.es_listWrapper__4792f {
+
+}*/
+
+.SearchForm_form__2QcwN > .SearchForm_input__EgnQX {
+  width: 100%;
+}
+
 .message-form {
   display: flex;
-  padding-top: 10px;
+  padding: 10px 0;
   box-sizing: border-box;
   height: 10vh;
-  width: 80vw;
   border-top: 1px solid #f4f4f4;
 }
 
 input[type="text"] {
   padding: 10px;
+  margin-right: 5px;
   width: 95%;
   height: 100%;
   border-radius: 2px;
@@ -72,4 +101,11 @@ input[type="text"] {
 
 img {
   margin-bottom: 10px;
+}
+
+.info {
+  display: flex;
+  justify-content: column;
+  justify-content: space-between;
+  padding: 10px;
 }

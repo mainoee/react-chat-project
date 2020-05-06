@@ -118,6 +118,14 @@ class Chat extends Component {
                 ) : (
                   <div>There are no messages yet!</div>
                 )}
+                <MessageForm
+                  authUser={authUser}
+                  content={content}
+                  onChangeContent={this.onChangeContent}
+                  onCreateMessage={this.onCreateMessage}
+                />
+              </div>
+              <div className="info">
                 <ReactGiphySearchbox
                   apiKey={process.env.REACT_APP_GIPHY_SEARCHBOX}
                   onSelect={item => this.onSelectGif(item)}
@@ -127,12 +135,6 @@ class Chat extends Component {
                   ]}
                 />
               </div>
-              <MessageForm
-                authUser={authUser}
-                content={content}
-                onChangeContent={this.onChangeContent}
-                onCreateMessage={this.onCreateMessage}
-              />
             </div>
           </div>
         )}

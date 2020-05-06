@@ -33,7 +33,7 @@ class Message extends Component {
     return (
       <div className="message-content">
         <i>{this.state.username}</i><small>{date} - {time}</small>
-        <p>{message.content}</p>
+        <p className="thread-content">{message.content}</p>
         {message.gif ? (
           <img src={message.gif} alt="gif" height="80" width="80" />
         ) : (
