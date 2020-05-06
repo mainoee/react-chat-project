@@ -9,6 +9,7 @@ import { AuthUserContext, withAuthorization } from '../session';
 import MessagesList from './MessagesList';
 import MessageForm from './MessageForm';
 import Channels from './Channels';
+import Gif from './Gif';
 
 class Chat extends Component {
   constructor(props) {
@@ -126,15 +127,16 @@ class Chat extends Component {
                   onCreateMessage={this.onCreateMessage}
                 />
               </div>
-              <div className="info">
+              <div className="gif-list">
                 <ReactGiphySearchbox
                   apiKey={process.env.REACT_APP_GIPHY_SEARCHBOX}
                   onSelect={item => this.onSelectGif(item)}
                   masonryConfig={[
                     { columns: 2, imageWidth: 110, gutter: 5 },
-                    { mq: "700px", columns: 3, imageWidth: 120, gutter: 5 }
+                    { mq: "700px", columns: 2, imageWidth: 120, gutter: 5 }
                   ]}
                 />
+                <Gif selectedGif={selectedGif} />
               </div>
             </div>
           </div>

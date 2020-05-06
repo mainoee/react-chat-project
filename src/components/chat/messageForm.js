@@ -19,13 +19,6 @@ const MessageForm = (props) => {
         value={props.content}
         onChange={props.onChangeContent}
       />
-      <div className="selected-gif">
-        {gif ? (
-          <img src={gif} alt="gif" className="gif" />
-        ) : (
-          ""
-        )}
-      </div>
       <Button
           type="submit"
           variant="contained"
