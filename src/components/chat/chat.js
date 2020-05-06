@@ -133,7 +133,7 @@ class Chat extends Component {
                   onSelect={item => this.onSelectGif(item)}
                   masonryConfig={[
                     { columns: 2, imageWidth: 110, gutter: 5 },
-                    { mq: "700px", columns: 2, imageWidth: 120, gutter: 5 }
+                    { mq: "700px", columns: 2, imageWidth: 110, gutter: 5 }
                   ]}
                 />
                 <Gif selectedGif={selectedGif} />

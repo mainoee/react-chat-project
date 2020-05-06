@@ -22,6 +22,7 @@
 .message-container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   height: 100%;
   width: 100%;
 }
@@ -31,7 +32,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  width: 70%;
+  width: 75%;
   padding: 10px 20px 0 20px;
 }
 
@@ -95,14 +96,16 @@ img {
 .gif-list {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  width: 30%;
+  width: 22%;
+  height: 85%;
+  margin-right: 20px;
+  padding: 40px 0;
 }
 
 .es_componentWrapper__1-bJI {
   height: 40%;
-  margin: 40px 0;
 }
 
 .SearchForm_form__2QcwN > .SearchForm_input__EgnQX {
@@ -111,8 +114,7 @@ img {
 
 .selected-gif {
   height: 25%;
-  width: 65%;
-  margin-top: 80px;
+  width: 85%;
 }
 
 img.gif {
