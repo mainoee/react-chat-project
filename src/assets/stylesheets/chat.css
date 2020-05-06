@@ -1,3 +1,5 @@
+/* Channels */
+
 .channels-container {
   padding: 30px;
   width: 13vw;
@@ -18,6 +20,8 @@
   padding-left: 5px;
   cursor: pointer;
 }
+
+/* Chat */
 
 .message-container {
   display: flex;
@@ -65,12 +69,17 @@
 }
 
 .message-content > small {
-  position: relative;
-  margin-left: 10px;
+  margin-left: 5px;
   font-style: italic;
   font-size: 10px;
   opacity: 0.6;
 }
+
+img {
+  margin-bottom: 10px;
+}
+
+/* Input message */
 
 .message-form {
   display: flex;
@@ -89,31 +98,32 @@ input[type="text"] {
   border-color: #d4d4d4;
 }
 
-img {
-  margin-bottom: 10px;
-}
+/* Gif list */
 
 .gif-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 22%;
-  height: 85%;
+  height: auto;
   margin-right: 20px;
   padding: 40px 0;
 }
 
 .es_componentWrapper__1-bJI {
   height: 40%;
+  margin-bottom: 20px;
 }
 
 .SearchForm_form__2QcwN > .SearchForm_input__EgnQX {
   width: 100%;
 }
 
+/* Gif preview */
+
 .selected-gif {
-  height: 25%;
+  height: 30%;
   width: 85%;
 }
 
