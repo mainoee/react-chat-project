@@ -18,6 +18,7 @@ const Navigation = () => (
 
 const NavigationAuth = () => (
   <ul className="menu">
+    <Link className="nav-link" to={"/"}>Home</Link>
     <Link className="nav-link" to={"/chat"}>Chat</Link>
     <SignOutButton />
   </ul>
