@@ -136,7 +136,9 @@ class Chat extends Component {
                     { mq: "700px", columns: 2, imageWidth: 110, gutter: 5 }
                   ]}
                 />
-                <Gif selectedGif={selectedGif} />
+                <div className="selected-gif">
+                  <Gif selectedGif={selectedGif} />
+                </div>
               </div>
             </div>
           </div>
