@@ -111,9 +111,10 @@ class Chat extends Component {
               selectedChannel={selectedChannel}
               onClickChannel={this.onClickChannel}
             />
+
             <div className="message-container">
-              {loading && <div>Loading...</div>}
               <div className="thread">
+                {loading && <div>Loading...</div>}
                 {messages ? (
                   <MessagesList messages={messages} />
                 ) : (
@@ -127,6 +128,7 @@ class Chat extends Component {
                   onCreateMessage={this.onCreateMessage}
                 />
               </div>
+
               <div className="gif-list">
                 <ReactGiphySearchbox
                   apiKey={process.env.REACT_APP_GIPHY_SEARCHBOX}
@@ -139,6 +141,7 @@ class Chat extends Component {
                 <div className="selected-gif">
                   <Gif selectedGif={selectedGif} />
                 </div>
+
               </div>
             </div>
           </div>
