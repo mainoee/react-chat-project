@@ -33,13 +33,6 @@ class Firebase {
 
   doSignOut = () => this.auth.signOut();
 
-  // TO DO
-
-  // doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
-
-  // doPasswordUpdate = password =>
-  //   this.auth.currentUser.updatePassword(password);
-
   // *** User API ***
 
   user = uid => this.db.ref(`users/${uid}`);
