@@ -28,15 +28,15 @@ const NavigationNonAuth = () => (
     <Link className="nav-link" to={"/"}>Home</Link>
     <Button
       color="primary"
-      variant="outlined"
+      variant="contained"
       className="button-authentication">
-        <Link to={"/signup"}>Sign Up</Link>
+        <Link to={"/signup"} className="button-link">Sign Up</Link>
     </Button>
     <Button
       color="primary"
-      variant="outlined"
+      variant="contained"
       className="button-authentication">
-        <Link to={"/login"}>Login</Link>
+        <Link to={"/login"} className="button-link">Login</Link>
     </Button>
   </ul>
 );

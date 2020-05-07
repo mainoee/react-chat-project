@@ -24,3 +24,12 @@ ul.menu {
 button.button-authentication {
   margin: 0 10px;
 }
+
+.button-link {
+  text-decoration: none;
+  color: white;
+}
+
+.button-link:hover {
+  color: white;
+}
