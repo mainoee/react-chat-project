@@ -74,11 +74,11 @@ class Chat extends Component {
   onCreateMessage = (event, authUser) => {
     const channel = this.state.selectedChannel;
     this.props.firebase.channels(channel).push({
-        content: this.state.content,
-        userId: authUser.uid,
-        createdAt: this.props.firebase.serverValue.TIMESTAMP,
-        gif: this.state.selectedGif
-      });
+      content: this.state.content,
+      userId: authUser.uid,
+      createdAt: this.props.firebase.serverValue.TIMESTAMP,
+      gif: this.state.selectedGif
+    });
 
     this.setState({ content: '', selectedGif: '' });
 
