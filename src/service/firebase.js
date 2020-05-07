@@ -39,6 +39,8 @@ class Firebase {
 
   users = () => this.db.ref('users');
 
+  // *** Chat API ***
+
   channels = (name) => this.db.ref(`channels/${name}/messages`);
 }
 
