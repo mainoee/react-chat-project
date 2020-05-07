@@ -5,7 +5,7 @@ const Gif = ({ selectedGif }) => {
   if (selectedGif) {
     return <img src={selectedGif} alt="gif" className="gif" />
   }
-    return <img src={Image} alt="react" className="gif" />
+    return <img src={Image} alt="react" className="react-picture" />
 };
 
 export default Gif;
