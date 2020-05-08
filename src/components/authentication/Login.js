@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
+import { FormattedMessage} from 'react-intl';
 
 import { withFirebase } from '../../service';
 
@@ -53,10 +54,20 @@ class LoginFormBase extends Component {
       <div className="auth-wrapper">
         <div className="auth-inner">
           <form onSubmit={this.onSubmit}>
-            <h3>Login</h3>
+            <h3>
+              <FormattedMessage
+                id="Login.title"
+                defaultMessage="Login"
+              />
+            </h3>
 
             <div className="form-group">
-              <label>Your email</label>
+              <label>
+                <FormattedMessage
+                 id="Login.email"
+                 defaultMessage="Your email"
+                />
+              </label>
               <input
                 name="email"
                 value={email}
@@ -68,7 +79,12 @@ class LoginFormBase extends Component {
             </div>
 
             <div className="form-group">
-              <label>Password</label>
+              <label>
+                <FormattedMessage
+                 id="Login.password"
+                 defaultMessage="Your password"
+                />
+              </label>
               <input
                 name="password"
                 value={password}

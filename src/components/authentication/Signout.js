@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
+import { FormattedMessage} from 'react-intl';
+
 import { withFirebase } from '../../service';
 
 const SignOutButton = ({ firebase }) => (
@@ -9,7 +11,7 @@ const SignOutButton = ({ firebase }) => (
     variant="contained"
     color="secondary"
   >
-    Sign Out
+    <FormattedMessage id="Button.signout" defaultMessage="Sign out" />
   </Button>
 );
 
