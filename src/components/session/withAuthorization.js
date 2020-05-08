@@ -13,6 +13,14 @@ const withAuthorization = condition => Component => {
           if (!condition(authUser)) {
             this.props.history.push('/login');
           }
+
+          this.props.firebase.user(authUser.uid).on('value', snapshot => {
+            const user = snapshot.val();
+
+            authUser.updateProfile({
+              displayName: user.username,
+            });
+          });
         },
       );
     }

@@ -76,6 +76,7 @@ class Chat extends Component {
     this.props.firebase.channels(channel).push({
       content: this.state.content,
       userId: authUser.uid,
+      username: authUser.displayName,
       createdAt: this.props.firebase.serverValue.TIMESTAMP,
       gif: this.state.selectedGif
     });

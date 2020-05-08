@@ -1,7 +1,7 @@
 import React from 'react';
 import Message from './Message';
 
-const MessagesList = ({ messages }) => (
+const MessagesList = ({ messages, authUser }) => (
   <div className="message-list">
     {messages.map(message => (
       <Message
