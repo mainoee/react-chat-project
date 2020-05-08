@@ -1,7 +1,6 @@
-Real-time Chat App with Firebase
+Real-time Chat App with Firebase Authentication and Realtime Database
 
-- This app uses Firebase Authentication to allow users to sign-up and login using email address and password sign-up/sign-in.
-- This app has 4 pages: Home, Sign-up, Login and Chat.
+- Users can sign-up and sign-in using email/password sign-up/sign-in methods from Firebase.
 - Access to Chat page is restricted to authenticated users.
 - Authenticated users can read and write messages in Chat page.
 - The Chat page is divided into channels.
