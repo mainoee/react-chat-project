@@ -6,7 +6,7 @@ Real-time Chat App with Firebase Authentication and Realtime Database
 - The chat is divided into channels.
 - Each channel has an associated list of messages.
 - Users can click on channel to see the list of associated messages.
-- Every authenticated users can read and write messages in Chat page.
+- Every authenticated users can read and write messages in corresponding channel.
 - Users can also search for GIFs and add one to their message.
 - Messages are stored in Realtime Database.
 - Each message is associated with a username, local date and time, and a gif.
