@@ -1,0 +1,15 @@
+{
+  "Button.signout": "Sign out",
+  "Chat.authLink": "Chat",
+  "Home.authLink": "Home",
+  "Home.nonAuthLink": "Home",
+  "Login.email": "Your email",
+  "Login.nonAuthLink": "Login",
+  "Login.password": "Your password",
+  "Login.title": "Login",
+  "Signup.email": "Your email",
+  "Signup.nonAuthLink": "Sign up",
+  "Signup.password": "Your password",
+  "Signup.title": "Sign Up",
+  "Signup.username": "Your username"
+}
