@@ -1,0 +1,67 @@
+[
+  {
+    "id": "Login.title",
+    "defaultMessage": "Login",
+    "filepath": "src/components/authentication/Login.js"
+  },
+  {
+    "id": "Login.email",
+    "defaultMessage": "Your email",
+    "filepath": "src/components/authentication/Login.js"
+  },
+  {
+    "id": "Login.password",
+    "defaultMessage": "Your password",
+    "filepath": "src/components/authentication/Login.js"
+  },
+  {
+    "id": "Button.signout",
+    "defaultMessage": "Sign out",
+    "filepath": "src/components/authentication/Signout.js"
+  },
+  {
+    "id": "Signup.title",
+    "defaultMessage": "Sign Up",
+    "filepath": "src/components/authentication/Signup.js"
+  },
+  {
+    "id": "Signup.username",
+    "defaultMessage": "Your username",
+    "filepath": "src/components/authentication/Signup.js"
+  },
+  {
+    "id": "Signup.email",
+    "defaultMessage": "Your email",
+    "filepath": "src/components/authentication/Signup.js"
+  },
+  {
+    "id": "Signup.password",
+    "defaultMessage": "Your password",
+    "filepath": "src/components/authentication/Signup.js"
+  },
+  {
+    "id": "Home.authLink",
+    "defaultMessage": "Home",
+    "filepath": "src/components/Navigation.js"
+  },
+  {
+    "id": "Chat.authLink",
+    "defaultMessage": "Chat",
+    "filepath": "src/components/Navigation.js"
+  },
+  {
+    "id": "Home.nonAuthLink",
+    "defaultMessage": "Home",
+    "filepath": "src/components/Navigation.js"
+  },
+  {
+    "id": "Signup.nonAuthLink",
+    "defaultMessage": "Sign up",
+    "filepath": "src/components/Navigation.js"
+  },
+  {
+    "id": "Login.nonAuthLink",
+    "defaultMessage": "Login",
+    "filepath": "src/components/Navigation.js"
+  }
+]
