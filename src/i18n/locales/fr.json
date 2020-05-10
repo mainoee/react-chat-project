@@ -11,5 +11,8 @@
   "Signup.nonAuthLink": "S'inscrire",
   "Signup.password": "Mot de passe",
   "Signup.title": "S'enregistrer",
-  "Signup.username": "Identifiant"
+  "Signup.username": "Identifiant",
+  "Channel.politics": "Politique",
+  "Channel.economics": "Economie",
+  "Channel.world": "Monde"
 }

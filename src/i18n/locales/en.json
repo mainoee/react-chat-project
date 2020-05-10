@@ -11,5 +11,8 @@
   "Signup.nonAuthLink": "Sign up",
   "Signup.password": "Your password",
   "Signup.title": "Sign Up",
-  "Signup.username": "Your username"
+  "Signup.username": "Your username",
+  "Channel.politics": "Politics",
+  "Channel.economics": "Economics",
+  "Channel.world": "World"
 }

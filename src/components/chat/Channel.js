@@ -1,19 +1,37 @@
 import React, { Component } from 'react';
+import { defineMessages, FormattedMessage } from 'react-intl';
 
-class Channel extends Component {
-  handleClick = () => {
-    this.props.onClickChannel(this.props.channel);
+const Channel = (props) => {
+  const { index, channel, selectedChannel, onClickChannel} = props;
+
+  const handleClick = () => {
+    onClickChannel(channel);
   }
 
-  render() {
-    const { channel, selectedChannel } = this.props;
-    return (
-      <p className={channel === selectedChannel ? 'active' : null }
-         onClick={this.handleClick}>
-          #{channel}
-      </p>
-    )
-  }
+  const channels = defineMessages({
+    title_0: {
+      id: 'Channel.politics',
+      defaultMessage: `#${channel}`
+    },
+    title_1: {
+      id: 'Channel.economics',
+      defaultMessage: `#${channel}`
+    },
+    title_2: {
+      id: 'Channel.world',
+      defaultMessage: `#${channel}`
+    }
+  })
+
+  return (
+    <p className={channel === selectedChannel ? 'active' : null }
+      onClick={handleClick}>
+        #<FormattedMessage
+          {...channels[`title_${index}`]}
+          values={{ channel: `${channel}` }}
+        />
+    </p>
+  )
 }
 
 export default Channel;

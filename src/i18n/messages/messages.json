@@ -63,5 +63,20 @@
     "id": "Login.nonAuthLink",
     "defaultMessage": "Login",
     "filepath": "src/components/Navigation.js"
+  },
+  {
+    "id": "Channel.politics",
+    "defaultMessage": "Politics",
+    "filepath": "src/components/chat/Channel.js"
+  },
+  {
+    "id": "Channel.economics",
+    "defaultMessage": "Economics",
+    "filepath": "src/components/chat/Channel.js"
+  },
+  {
+    "id": "Channel.world",
+    "defaultMessage": "World",
+    "filepath": "src/components/chat/Channel.js"
   }
 ]

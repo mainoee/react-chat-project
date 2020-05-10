@@ -6,6 +6,7 @@ const Channels = ({ channels, selectedChannel, onClickChannel }) => (
     {channels.map((channel, index) => (
       <Channel
         key={index}
+        index={index}
         channel={channel}
         onClickChannel={onClickChannel}
         selectedChannel={selectedChannel}

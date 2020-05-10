@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import { FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import { withFirebase } from '../../service';
 

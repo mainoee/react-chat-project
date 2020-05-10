@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-import { FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import { withFirebase } from '../../service';
 
