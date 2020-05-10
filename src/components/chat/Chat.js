@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-import ReactGiphySearchbox from "react-giphy-searchbox";
 
 import { withFirebase } from '../../service';
 
@@ -9,6 +8,7 @@ import { AuthUserContext, withAuthorization } from '../session';
 import MessagesList from './MessagesList';
 import MessageForm from './MessageForm';
 import Channels from './Channels';
+import GifBox from './GifBox';
 import Gif from './Gif';
 
 class Chat extends Component {
@@ -103,6 +103,7 @@ class Chat extends Component {
       channels,
       selectedChannel,
       selectedGif } = this.state;
+
     return (
       <AuthUserContext.Consumer>
         {authUser => (
@@ -131,19 +132,12 @@ class Chat extends Component {
               </div>
 
               <div className="gif-list">
-                <ReactGiphySearchbox
-                  apiKey={process.env.REACT_APP_GIPHY_SEARCHBOX}
-                  onSelect={item => this.onSelectGif(item)}
-                  masonryConfig={[
-                    { columns: 2, imageWidth: 110, gutter: 5 },
-                    { mq: "700px", columns: 2, imageWidth: 110, gutter: 5 }
-                  ]}
-                />
+                <GifBox onSelectGif={this.onSelectGif} />
                 <div className="selected-gif">
                   <Gif selectedGif={selectedGif} />
                 </div>
-
               </div>
+
             </div>
           </div>
         )}

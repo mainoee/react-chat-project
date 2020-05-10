@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { withFirebase } from '../../service';
-
 const Message = (props) => {
   const { message } = props;
   const time = new Date(message.createdAt).toLocaleTimeString();
@@ -24,4 +22,4 @@ const Message = (props) => {
   )
 }
 
-export default withFirebase(Message);
+export default Message;
