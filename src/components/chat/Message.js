@@ -1,13 +1,15 @@
 import React from 'react';
+import { FormattedDate, FormattedTime } from 'react-intl';
 
 const Message = (props) => {
   const { message } = props;
-  const time = new Date(message.createdAt).toLocaleTimeString();
-  const date = new Date(message.createdAt).toLocaleDateString();
+  const date = new Date(message.createdAt);
 
   return (
     <div className="message-content">
-      <i>{message.username}</i><small>{date} - {time}</small>
+      <i>{message.username}</i><small>
+        <FormattedDate value={date} /> - <FormattedTime value={date} />
+      </small>
       {message.content ? (
         <p className="thread-content">{message.content}</p>
       ) : (
