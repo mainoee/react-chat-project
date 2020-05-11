@@ -78,5 +78,25 @@
     "id": "Channel.world",
     "defaultMessage": "World",
     "filepath": "src/components/chat/Channel.js"
+  },
+    {
+    "id": "Signup.placeholder.username",
+    "defaultMessage": "Enter username",
+    "filepath": "src/components/authentication/Signup.js"
+  },
+  {
+    "id": "Signup.placeholder.email",
+    "defaultMessage": "Enter email",
+    "filepath": "src/components/authentication/Signup.js"
+  },
+  {
+    "id": "Signup.placeholder.password",
+    "defaultMessage": "Enter password",
+    "filepath": "src/components/authentication/Signup.js"
+  },
+  {
+    "id": "Button.signup",
+    "defaultMessage": "Sign Up",
+    "filepath": "src/components/authentication/Signup.js"
   }
 ]

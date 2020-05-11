@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
-import { FormattedMessage} from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 import { withFirebase } from '../../service';
 
@@ -69,6 +68,8 @@ class SignUpFormBase extends Component {
       email === '' ||
       username === '';
 
+    const { formatMessage } = this.props.intl;
+
     return (
       <div className="auth-wrapper">
         <div className="auth-inner">
@@ -93,7 +94,7 @@ class SignUpFormBase extends Component {
                 onChange={this.onChange}
                 type="text"
                 className="form-control"
-                placeholder="Enter username"
+                placeholder={formatMessage({ id: "Signup.placeholder.username"})}
               />
             </div>
 
@@ -110,7 +111,7 @@ class SignUpFormBase extends Component {
                 onChange={this.onChange}
                 type="text"
                 className="form-control"
-                placeholder="Enter email"
+                placeholder={formatMessage({ id: "Signup.placeholder.email"})}
               />
             </div>
 
@@ -127,10 +128,19 @@ class SignUpFormBase extends Component {
                 onChange={this.onChange}
                 type="password"
                 className="form-control"
-                placeholder="Enter password" />
+                placeholder={formatMessage({ id: "Signup.placeholder.password"})}
+              />
             </div>
 
-            <button disabled={isInvalid} type="submit" className="btn btn-primary btn-block">Sign Up</button>
+            <button
+              disabled={isInvalid}
+              type="submit"
+              className="btn btn-primary btn-block">
+                <FormattedMessage
+                  id="Button.signup"
+                  defaultMessage="Sign Up"
+                />
+            </button>
 
             {error && <p>{error.message}</p>}
           </form>
@@ -141,6 +151,7 @@ class SignUpFormBase extends Component {
 }
 
 const SignUpForm = compose(
+  injectIntl,
   withRouter,
   withFirebase,
 )(SignUpFormBase);

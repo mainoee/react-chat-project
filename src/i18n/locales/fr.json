@@ -14,5 +14,9 @@
   "Signup.username": "Identifiant",
   "Channel.politics": "Politique",
   "Channel.economics": "Economie",
-  "Channel.world": "Monde"
+  "Channel.world": "Monde",
+  "Signup.placeholder.username": "Entrer identifiant",
+  "Signup.placeholder.email": "Entrer email",
+  "Signup.placeholder.password": "Entrer mot de passe",
+  "Button.signup": "S'enregistrer"
 }
