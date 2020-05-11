@@ -18,5 +18,8 @@
   "Signup.placeholder.username": "Enter username",
   "Signup.placeholder.email": "Enter email",
   "Signup.placeholder.password": "Enter password",
-  "Button.signup": "Sign Up"
+  "Button.signup": "Sign Up",
+  "Login.placeholder.email": "Enter email",
+  "Login.placeholder.password": "Enter password",
+  "Button.login": "Login"
 }

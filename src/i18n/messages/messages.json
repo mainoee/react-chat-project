@@ -98,5 +98,20 @@
     "id": "Button.signup",
     "defaultMessage": "Sign Up",
     "filepath": "src/components/authentication/Signup.js"
+  },
+  {
+    "id": "Login.placeholder.email",
+    "defaultMessage": "Enter email",
+    "filepath": "src/components/authentication/Login.js"
+  },
+  {
+    "id": "Login.placeholder.password",
+    "defaultMessage": "Enter password",
+    "filepath": "src/components/authentication/Login.js"
+  },
+  {
+    "id": "Button.login",
+    "defaultMessage": "Login",
+    "filepath": "src/components/authentication/Login.js"
   }
 ]

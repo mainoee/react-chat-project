@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 import { withFirebase } from '../../service';
 
@@ -50,6 +50,8 @@ class LoginFormBase extends Component {
 
     const isInvalid = email === '' || password === '';
 
+    const { formatMessage } = this.props.intl;
+
     return (
       <div className="auth-wrapper">
         <div className="auth-inner">
@@ -74,7 +76,7 @@ class LoginFormBase extends Component {
                 onChange={this.onChange}
                 type="text"
                 className="form-control"
-                placeholder="Enter email"
+                placeholder={formatMessage({ id: "Login.placeholder.email"})}
               />
             </div>
 
@@ -91,10 +93,19 @@ class LoginFormBase extends Component {
                 onChange={this.onChange}
                 type="password"
                 className="form-control"
-                placeholder="Enter password" />
+                placeholder={formatMessage({ id: "Login.placeholder.password"})}
+              />
             </div>
 
-            <button disabled={isInvalid} type="submit" className="btn btn-primary btn-block">Login</button>
+            <button
+              disabled={isInvalid}
+              type="submit"
+              className="btn btn-primary btn-block">
+                <FormattedMessage
+                  id="Button.login"
+                  defaultMessage="Login"
+                />
+              </button>
 
             {error && <p>{error.message}</p>}
           </form>
@@ -105,6 +116,7 @@ class LoginFormBase extends Component {
 }
 
 const LoginForm = compose(
+  injectIntl,
   withRouter,
   withFirebase,
 )(LoginFormBase);

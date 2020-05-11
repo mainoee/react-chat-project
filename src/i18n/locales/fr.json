@@ -6,7 +6,7 @@
   "Login.email": "Adresse email",
   "Login.nonAuthLink": "Se connecter",
   "Login.password": "Mot de passe",
-  "Login.title": "Connexion",
+  "Login.title": "Se connecter",
   "Signup.email": "Adresse email",
   "Signup.nonAuthLink": "S'inscrire",
   "Signup.password": "Mot de passe",
@@ -18,5 +18,8 @@
   "Signup.placeholder.username": "Entrer identifiant",
   "Signup.placeholder.email": "Entrer email",
   "Signup.placeholder.password": "Entrer mot de passe",
-  "Button.signup": "S'inscrire"
+  "Button.signup": "S'inscrire",
+  "Login.placeholder.email": "Entrer email",
+  "Login.placeholder.password": "Entrer mot de passe",
+  "Button.login": "Se connecter"
 }
