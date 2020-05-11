@@ -21,5 +21,6 @@
   "Button.signup": "Sign Up",
   "Login.placeholder.email": "Enter email",
   "Login.placeholder.password": "Enter password",
-  "Button.login": "Login"
+  "Button.login": "Login",
+  "Button.send.messageForm": "Send"
 }

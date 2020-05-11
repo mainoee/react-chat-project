@@ -113,5 +113,10 @@
     "id": "Button.login",
     "defaultMessage": "Login",
     "filepath": "src/components/authentication/Login.js"
+  },
+  {
+    "id": "Button.send.messageForm",
+    "defaultMessage": "Send",
+    "filepath": "src/components/chat/MessageForm.js"
   }
 ]

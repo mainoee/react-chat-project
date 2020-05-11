@@ -10,7 +10,7 @@
   "Signup.email": "Adresse email",
   "Signup.nonAuthLink": "S'inscrire",
   "Signup.password": "Mot de passe",
-  "Signup.title": "S'inscire",
+  "Signup.title": "S'inscrire",
   "Signup.username": "Identifiant",
   "Channel.politics": "Politique",
   "Channel.economics": "Economie",
@@ -21,5 +21,6 @@
   "Button.signup": "S'inscrire",
   "Login.placeholder.email": "Entrer email",
   "Login.placeholder.password": "Entrer mot de passe",
-  "Button.login": "Se connecter"
+  "Button.login": "Se connecter",
+  "Button.send.messageForm": "Envoyer"
 }
