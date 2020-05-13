@@ -19,4 +19,5 @@ body, html, .app, #root {
 
 .app-wrapper {
   display: flex;
+  height: 100%;
 }
